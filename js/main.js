@@ -1,10 +1,14 @@
 $(document).ready(function () {
+	setTimeout(redirect, 2000);
+});
+
+function redirect() {
 	var redirect = getUrlParameter("website");
 	if (!redirect) { return; }
 	var url = window.location.href;
 	redirect += "?"+url.substr(url.indexOf('&')+1);
 	window.location.replace(redirect);
-});
+}
 
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
